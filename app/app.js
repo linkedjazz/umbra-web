@@ -94,7 +94,7 @@ const App = React.createClass({
   },
 
   downloadData: function(){
-    window.location='http://linkedjazz.org:5555/api/v1/umbra?action=download'
+    window.location='https://linkedjazz.org/umbra/api/v1/umbra?action=download'
   },
 
 
@@ -107,7 +107,7 @@ const App = React.createClass({
     };
 
 
-    fetch('http://linkedjazz.org:5555/api/v1/umbra?action=work')
+    fetch('https://linkedjazz.org/umbra/api/v1/umbra?action=work')
       .then((res) => res.json())
       .then((json) => {
         var h = self.state.history
@@ -126,7 +126,7 @@ const App = React.createClass({
   saveWork: function(work){
     if (this.state.user.toLowerCase() !== 'demo'){
       work.user = this.state.user
-      fetch('http://linkedjazz.org:5555/api/v1/umbra?action=save', {
+      fetch('https://linkedjazz.org/umbra/api/v1/umbra?action=save', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
